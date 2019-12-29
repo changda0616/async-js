@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "title": "The Adventures of Tom - updated",
+      "author": "Mark Twain",
+      "id": 2
+    },
+    {
+      "title": "The Adventures of Tom1",
+      "author": "Mark Twain",
+      "id": 3
+    },
+    {
+      "title": "The Adventures of Tom",
+      "author": "Mark Twain",
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
