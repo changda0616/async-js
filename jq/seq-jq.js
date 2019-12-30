@@ -10,7 +10,7 @@ $.ajax({
     $.get( "http://localhost:3000/posts").done(function(value) {
       $.ajax({
         method: 'DELETE',
-        url: 'http://localhost:3000/posts/1',
+        url: 'http://localhost:3000/posts/11',
       })        
     });
   })

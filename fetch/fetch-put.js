@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script>
-putData('http://localhost:3000/posts/100', {
+putData('http://localhost:3000/posts/1', {
   title: 'The Adventures of Tom1',
   author: 'Mark Twain1'
 })
-  .then(data => getData('http://localhost:3000/posts/100')) // JSON from `response.json()` call
+  .then(data => console.log(data)) // JSON from `response.json()` call
   .catch(error => console.error(error))
 
 function putData(url, data) {
@@ -29,23 +21,3 @@ function putData(url, data) {
   })
     .then(response => response.json()) // 輸出成 json
 }
-
-function getData(url){
-  return fetch(url)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(myJson);
-  });
-  
-}
-
-  </script>
-  <script>
-  </script>
-  <title>Document</title>
-</head>
-<body>
-</body>
-</html>

@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script>
-putData('http://localhost:3000/posts/100', {
-  title: 'The Adventures of Tom1',
-  author: 'Mark Twain1'
+postData('http://localhost:3000/posts', {
+  title: 'The Adventures of Tom',
+  author: 'Mark Twain'
 })
-  .then(data => getData('http://localhost:3000/posts/100')) // JSON from `response.json()` call
+  .then(data => getData('http://localhost:3000/posts'))
+  .then(data => deleteData('http://localhost:3000/posts/30'))
   .catch(error => console.error(error))
 
-function putData(url, data) {
+function postData(url, data) {
   // Default options are marked with *
   return fetch(url, {
     body: JSON.stringify(data), // must match 'Content-Type' header
@@ -22,7 +15,7 @@ function putData(url, data) {
     headers: {
       'content-type': 'application/json'
     },
-    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, cors, *same-origin
     redirect: 'follow', // manual, *follow, error
     referrer: 'no-referrer', // *client, no-referrer
@@ -38,14 +31,13 @@ function getData(url){
   .then(function(myJson) {
     console.log(myJson);
   });
-  
 }
 
-  </script>
-  <script>
-  </script>
-  <title>Document</title>
-</head>
-<body>
-</body>
-</html>
+function deleteData(url, data) {
+  // Default options are marked with *
+  return fetch(url, {
+    method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, cors, *same-origin
+  })
+    .then(response => response.json()) // 輸出成 json
+}

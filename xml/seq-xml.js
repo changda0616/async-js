@@ -7,7 +7,7 @@ function reqListener (e) {
     oReq3.addEventListener("load", function(event) {
         console.log(event.target.responseText);
     });  
-    oReq3.open("DELETE", "http://localhost:3000/posts/1");  
+    oReq3.open("DELETE", "http://localhost:3000/posts/11");  
     oReq3.send();
   });  
   oReq2.open("GET", "http://localhost:3000/posts");  

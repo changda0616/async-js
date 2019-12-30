@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script>
 putData('http://localhost:3000/posts/100', {
   title: 'The Adventures of Tom1',
   author: 'Mark Twain1'
 })
-  .then(data => getData('http://localhost:3000/posts/100')) // JSON from `response.json()` call
+  .then(data => getData(data)) // JSON from `response.json()` call
   .catch(error => console.error(error))
 
 function putData(url, data) {
@@ -38,14 +30,4 @@ function getData(url){
   .then(function(myJson) {
     console.log(myJson);
   });
-  
 }
-
-  </script>
-  <script>
-  </script>
-  <title>Document</title>
-</head>
-<body>
-</body>
-</html>
